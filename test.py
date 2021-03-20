@@ -1,13 +1,7 @@
-def solution(S):
-    # write your code in Python 3.6
-    a=S[0]
-    result = True
-    for s in S[1:]:
-        if a>s:
-            result = False
-            break
-        else:
-            a=s
-    return result
+import os
 
-print(solution("ba"))
+
+folder_path = r"C:\Users\shant\PycharmProjects\codejam\2020\qualification"
+
+print(os.access(folder_path, os.W_OK))
+print(os.access(folder_path, os.R_OK))

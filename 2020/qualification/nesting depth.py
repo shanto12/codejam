@@ -1,19 +1,30 @@
+# Passed but wrong answer
+
 for t in range(1, int(input())+1):
-    N=int(input())
-    matrix = []
-    k, r, c = 0, 0, 0
-    for row in range(N):
-        row_list = list(map(int, input().split()))
-        if len(set(row_list)) != N:
-            r += 1
-        matrix.append(row_list)
-    for i in range(N):
-        k += matrix[i][i]
-        c_list = []
-        for j in range(N):
-            c_list.append(matrix[j][i])
+    S=[int(x) for x in input()]
+    S_ = ""
+    counter = S[0]
+    previous = S[0]
+    S_ += "(" * counter
+    S_ += str(S[0])
+    for number in S[1:]:
+        diff=number-previous
+        if diff==0:
+            S_ += str(number)
+            # counter = 0
+            previous = number
+        elif diff <0:
+            S_ += ")" * abs(diff)
+            S_ += str(number)
+            counter = counter-abs(diff)
+            previous = number
+        else:
+            S_ += ")" * counter
+            counter = number
+            S_ += "(" * counter
+            S_ += str(number)
+            previous = number
 
-        if len(set(c_list)) != N:
-            c += 1
+    S_ += ")" * counter
 
-    print(f"Case #{t}: {k} {r} {c}")
+    print(f"Case #{t}: {S_}")
