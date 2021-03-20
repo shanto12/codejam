@@ -1,4 +1,4 @@
-# Passed but wrong answer
+# Passed. Right answer
 
 for t in range(1, int(input())+1):
     S=[int(x) for x in input()]
@@ -19,12 +19,10 @@ for t in range(1, int(input())+1):
             counter = counter-abs(diff)
             previous = number
         else:
-            S_ += ")" * counter
             counter = number
-            S_ += "(" * counter
+            S_ += "(" * diff
             S_ += str(number)
             previous = number
 
     S_ += ")" * counter
-
     print(f"Case #{t}: {S_}")
