@@ -1,6 +1,6 @@
 for t in range(1, int(input()) + 1):
-    next_lines = input().split()
-    R, C = int(next_lines[0]), int(next_lines[1])
+    next_lines = input().split(" ")
+    R, C = next_lines[0], next_lines[1]
     L = [int(x) for x in input().split()]
     cost = 0
     j = N - 1
