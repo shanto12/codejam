@@ -9,3 +9,5 @@ def toh(n, start, end, aux):
 
 n = int(input("Enter the number of disks: "))
 toh(n, 'A', 'B', 'C')
+
+
