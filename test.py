@@ -1,7 +1,7 @@
-mylist = [6, 4, 2, 8, 1]
-
-i, j = 2, 4
-mylist = mylist[:i] + mylist[i:j+1][::-1] + mylist[j+1:]
+import os
 
 
-print(mylist)
+folder_path = r"C:\Users\shant\PycharmProjects\codejam\2020\qualification"
+
+print(os.access(folder_path, os.W_OK))
+print(os.access(folder_path, os.R_OK))
